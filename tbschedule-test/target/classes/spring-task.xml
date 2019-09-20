@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+    <task:annotation-driven/>
+
+    <bean id="scheduleManagerFactory" class="com.taobao.pamirs.schedule.strategy.TBScheduleManagerFactory" init-method="init">
+        <property name="zkConfig">
+            <map>
+                <entry key="zkConnectString" value="10.254.124.101:2181"/>
+                <entry key="rootPath" value="/taobao-pamirs-schedule/huijin"/>
+                <entry key="zkSessionTimeout" value="3000"/>
+                <entry key="userName" value="ScheduleAdmin"/>
+                <entry key="password" value="password"/>
+                <entry key="isCheckParentPath" value="true" />
+            </map>
+        </property>
+    </bean>
+</beans>

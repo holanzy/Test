@@ -1,0 +1,20 @@
+[2018-08-10 19:31:09.0469][1Class:Log4jTest.main(Log4jTest.java:13)][Level: INFO ] - logInfo test
+[2018-08-10 19:31:09.0469][2Class:Log4jTest.main(Log4jTest.java:13)][Level: INFO ] - logInfo test
+[2018-08-10 19:31:09.0471][1Class:Log4jTest.main(Log4jTest.java:14)][Level: ERROR] - logError test
+[2018-08-10 19:31:09.0471][2Class:Log4jTest.main(Log4jTest.java:14)][Level: ERROR] - logError test
+[2018-08-10 19:31:09.0471][3Class:Log4jTest.main(Log4jTest.java:14)][Level: ERROR] - logError test
+
+[2018-12-07 15:36:19.0809][1Class:Log4jTest.main(Log4jTest.java:13)][Level: INFO ] - logInfo test
+[2018-12-07 15:36:19.0809][2Class:Log4jTest.main(Log4jTest.java:13)][Level: INFO ] - logInfo test
+[2018-12-07 15:36:19.0812][1Class:Log4jTest.main(Log4jTest.java:14)][Level: ERROR] - logError test
+[2018-12-07 15:36:19.0812][2Class:Log4jTest.main(Log4jTest.java:14)][Level: ERROR] - logError test
+[2018-12-07 15:36:19.0812][3Class:Log4jTest.main(Log4jTest.java:14)][Level: ERROR] - logError test
+[2018-12-07 16:12:12.0140][1Class:Log4jTest.main(Log4jTest.java:15)][Level: DEBUG] - logDegub test
+[2018-12-07 16:12:12.0140][2Class:Log4jTest.main(Log4jTest.java:15)][Level: DEBUG] - logDegub test
+
+
+
+[2018-12-07 16:12:23.0561][1Class:Log4jTest.main(Log4jTest.java:15)][Level: DEBUG] - logDegub test
+[2018-12-07 16:12:23.0561][2Class:Log4jTest.main(Log4jTest.java:15)][Level: DEBUG] - logDegub test
+
+
