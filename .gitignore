@@ -2,3 +2,4 @@
 /log-test/target/
 /.idea/
 /tbschedule-test/target/
+*.DS_Store
