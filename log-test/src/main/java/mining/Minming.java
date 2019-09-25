@@ -17,16 +17,16 @@ public class Minming {
     public static void main(String[] args) {
         Minming minming = new Minming();
         List<String> tokens = new ArrayList<>();
-        tokens.add("qPHLH78dQSuFXLYvgavVUlUXRA87vPqRYJaIGM7oI7AuxYhxpGm4E1riaeLINDYd");//main
-        tokens.add("eXQq1Yj4MBSpDfVht2fK6Z0OnOmON3TBIbd43sSpe2j9jc9EEVGPzXNhTSExdwzb");
-        tokens.add("4ux0yMSiStgKx294ZlFQIXMY53s4BqiSADNcjn5KkfGFOVmSWsYEO3OcXW9gFueb");//mfn
+        tokens.add("gfrOgSV5gG8qSHuVGj5ZDk1G5VTBIyF99t1DATOxpHCW7GZF7cB0ijhp66mdB72h");//main
+        tokens.add("HknHUvXndJTTXmyXRCP203HoGOTytqwUnfg09VttKAGvzYB3STTCoeb34j8i0Cc6");
+        tokens.add("jXB4PTw80UPCMArbKsoQNLd4UiPJLgcH43yNgYXoeQ0NBwbNCoux26BrgUpn49pt");//mfn
 
         ScheduledExecutorService scheduled = Executors.newScheduledThreadPool(2);
         scheduled.scheduleAtFixedRate(() -> {
             tokens.forEach(token -> {
                 minming.getToken(token);
             });
-        }, 1, 11, TimeUnit.MINUTES);
+        }, 0, 11, TimeUnit.MINUTES);
 
         Map<String, Long> map = new HashMap<>();
         if (map.size() == 0) {
@@ -56,10 +56,12 @@ public class Minming {
             @Override
             public void run() {
                 map.forEach((k, v) -> {
-                    minming.change(k);
+                    if(System.currentTimeMillis()>= 1569286800000L) {
+                        minming.change(k);
+                    }
                 });
             }
-        }, 0, 2, TimeUnit.SECONDS);*/
+        }, 0, 3, TimeUnit.MINUTES);*/
 
         //minming.getToken("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
         //minming.getStatus("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
