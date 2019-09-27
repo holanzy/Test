@@ -22,6 +22,8 @@ public class Main {
         map.put("123", "a");
         map.put("456","b");
         System.out.println(hash("123"));
+
+        System.out.println("abc".hashCode());
     }
 
 
