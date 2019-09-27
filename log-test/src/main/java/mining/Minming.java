@@ -26,7 +26,7 @@ public class Minming {
             tokens.forEach(token -> {
                 minming.getToken(token);
             });
-        }, 0, 11, TimeUnit.MINUTES);
+        }, 0, 12, TimeUnit.MINUTES);
 
         Map<String, Long> map = new HashMap<>();
         if (map.size() == 0) {
