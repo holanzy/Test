@@ -9,6 +9,7 @@ public class Temp {
     public void waiter() throws InterruptedException {
         synchronized (this) {
             System.out.println("等待");
+            //wait会释放锁，Thread.sleep(1000)不会释放锁
             wait();
             System.out.println(this.count);
         }

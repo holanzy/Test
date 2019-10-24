@@ -18,7 +18,7 @@ public class Minming {
         Minming minming = new Minming();
         List<String> tokens = new ArrayList<>();
         tokens.add("gfrOgSV5gG8qSHuVGj5ZDk1G5VTBIyF99t1DATOxpHCW7GZF7cB0ijhp66mdB72h");//main
-        tokens.add("HknHUvXndJTTXmyXRCP203HoGOTytqwUnfg09VttKAGvzYB3STTCoeb34j8i0Cc6");
+        tokens.add("YRFd7541UsJOYJSmUlUikNTTsPERviybOiyxPGvkE3huKVUjZglW6KItvRoIjnnz");
         tokens.add("jXB4PTw80UPCMArbKsoQNLd4UiPJLgcH43yNgYXoeQ0NBwbNCoux26BrgUpn49pt");//mfn
 
         ScheduledExecutorService scheduled = Executors.newScheduledThreadPool(3);
@@ -26,7 +26,7 @@ public class Minming {
             tokens.forEach(token -> {
                 minming.getToken(token);
             });
-        }, 0, 12, TimeUnit.MINUTES);
+        }, 0, 13, TimeUnit.MINUTES);
 
         Map<String, Long> map = new HashMap<>();
         if (map.size() == 0) {
@@ -55,13 +55,24 @@ public class Minming {
         scheduled.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
-                map.forEach((k, v) -> {
-                    if(System.currentTimeMillis()>= 1569286800000L) {
-                        minming.change(k);
-                    }
-                });
+                Map<String, String> map1 = new HashMap<>();
+                map1.put("HknHUvXndJTTXmyXRCP203HoGOTytqwUnfg09VttKAGvzYB3STTCoeb34j8i0Cc6", "2");
+                map1.put("jXB4PTw80UPCMArbKsoQNLd4UiPJLgcH43yNgYXoeQ0NBwbNCoux26BrgUpn49pt", "3");
+                //map1.put("gfrOgSV5gG8qSHuVGj5ZDk1G5VTBIyF99t1DATOxpHCW7GZF7cB0ijhp66mdB72h","1");
+                if (System.currentTimeMillis() >= 1572312035000L) {
+                    System.out.println("adf1");
+                    map1.forEach((k, v) -> {
+                        String result = minming.change(k);
+                        if (result.contains("true")) {
+                            for (int i = 0; i < 5; i++) {
+                                minming.change("gfrOgSV5gG8qSHuVGj5ZDk1G5VTBIyF99t1DATOxpHCW7GZF7cB0ijhp66mdB72h");
+                            }
+                        }
+                    });
+                }
             }
-        }, 0, 2, TimeUnit.MINUTES);
+
+        }, 0, 10, TimeUnit.SECONDS);
 
         //minming.getToken("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
         //minming.getStatus("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
@@ -69,10 +80,11 @@ public class Minming {
         //minming.change("qPHLH78dQSuFXLYvgavVUlUXRA87vPqRYJaIGM7oI7AuxYhxpGm4E1riaeLINDYd");
     }
 
-    public void change(String token) {
+    public String change(String token) {
         String url = "https://www.fengjr.com/activity/api/v3/mining/invokeExchange/6C0C1643-7E18-4B5F-B72F-DBF857F556AF?productId=B4B8A6CD-D8F8-4DA9-BC03-0D6AC81F69C9";
         String result = HttpClientUtil.callRemote(url, null, "Authorization", token);
-        System.out.println("***********兑换结果：" + result);
+        System.out.println("***********兑换结果：" + result + ";" + token);
+        return result;
     }
 
     //刷新token

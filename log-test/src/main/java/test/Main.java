@@ -18,12 +18,9 @@ public class Main {
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<>();
-        map.put("123", "a");
-        map.put("456","b");
-        System.out.println(hash("123"));
-
-        System.out.println("abc".hashCode());
+        BigDecimal b = new BigDecimal(1);
+        BigDecimal passRate = b.divide(new BigDecimal(7),5,BigDecimal.ROUND_HALF_UP);
+        System.out.println(passRate);
     }
 
 
