@@ -21,7 +21,7 @@ public class Minming {
         tokens.add("HknHUvXndJTTXmyXRCP203HoGOTytqwUnfg09VttKAGvzYB3STTCoeb34j8i0Cc6");
         tokens.add("jXB4PTw80UPCMArbKsoQNLd4UiPJLgcH43yNgYXoeQ0NBwbNCoux26BrgUpn49pt");//mfn
 
-        ScheduledExecutorService scheduled = Executors.newScheduledThreadPool(2);
+        ScheduledExecutorService scheduled = Executors.newScheduledThreadPool(3);
         scheduled.scheduleAtFixedRate(() -> {
             tokens.forEach(token -> {
                 minming.getToken(token);
@@ -52,7 +52,7 @@ public class Minming {
         }, 0, 10, TimeUnit.SECONDS);
 
         //周二开启
-        /*scheduled.scheduleAtFixedRate(new Runnable() {
+        scheduled.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                 map.forEach((k, v) -> {
@@ -61,7 +61,7 @@ public class Minming {
                     }
                 });
             }
-        }, 0, 3, TimeUnit.MINUTES);*/
+        }, 0, 2, TimeUnit.MINUTES);
 
         //minming.getToken("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
         //minming.getStatus("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
