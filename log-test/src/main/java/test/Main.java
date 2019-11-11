@@ -1,5 +1,8 @@
 package test;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.*;
@@ -18,9 +21,15 @@ public class Main {
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }
     public static void main(String[] args) {
-        BigDecimal b = new BigDecimal(1);
-        BigDecimal passRate = b.divide(new BigDecimal(7),5,BigDecimal.ROUND_HALF_UP);
+        BigDecimal passRate = new BigDecimal(1).divide(new BigDecimal(1079), 4, BigDecimal.ROUND_HALF_UP);
         System.out.println(passRate);
+
+        try {
+            String a = "123,";
+            System.out.println(a.substring(0,a.lastIndexOf(",")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -4,8 +4,12 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -17,16 +21,16 @@ public class Minming {
     public static void main(String[] args) {
         Minming minming = new Minming();
         List<String> tokens = new ArrayList<>();
-        tokens.add("gfrOgSV5gG8qSHuVGj5ZDk1G5VTBIyF99t1DATOxpHCW7GZF7cB0ijhp66mdB72h");//main
-        tokens.add("YRFd7541UsJOYJSmUlUikNTTsPERviybOiyxPGvkE3huKVUjZglW6KItvRoIjnnz");
-        tokens.add("jXB4PTw80UPCMArbKsoQNLd4UiPJLgcH43yNgYXoeQ0NBwbNCoux26BrgUpn49pt");//mfn
+        tokens.add("NPjlQQ3a6zW0VvJo9HlOK405fJyieBLacsaW86FpDiFGkoUHpPmi7ZvIeRX0tdN9");//main
+        tokens.add("PW1TBvZHcNWojeWoOhqufYfb87VtMtELMLHqDatEV0HUs6AS6yyzdCw4n3l2ntVf");
+        tokens.add("ua9XzVaeABQBC1Ss3uFOAtIxvi54fmFvtbC1K18AGwRKtLfBKQ9ZZnvGNFqo35Db");//mfn
 
         ScheduledExecutorService scheduled = Executors.newScheduledThreadPool(3);
         scheduled.scheduleAtFixedRate(() -> {
             tokens.forEach(token -> {
                 minming.getToken(token);
             });
-        }, 0, 13, TimeUnit.MINUTES);
+        }, 0, 15, TimeUnit.MINUTES);
 
         Map<String, Long> map = new HashMap<>();
         if (map.size() == 0) {
@@ -56,22 +60,27 @@ public class Minming {
             @Override
             public void run() {
                 Map<String, String> map1 = new HashMap<>();
-                map1.put("HknHUvXndJTTXmyXRCP203HoGOTytqwUnfg09VttKAGvzYB3STTCoeb34j8i0Cc6", "2");
-                map1.put("jXB4PTw80UPCMArbKsoQNLd4UiPJLgcH43yNgYXoeQ0NBwbNCoux26BrgUpn49pt", "3");
+                map1.put("PW1TBvZHcNWojeWoOhqufYfb87VtMtELMLHqDatEV0HUs6AS6yyzdCw4n3l2ntVf", "2");
+                //map1.put("ua9XzVaeABQBC1Ss3uFOAtIxvi54fmFvtbC1K18AGwRKtLfBKQ9ZZnvGNFqo35Db", "3");
                 //map1.put("gfrOgSV5gG8qSHuVGj5ZDk1G5VTBIyF99t1DATOxpHCW7GZF7cB0ijhp66mdB72h","1");
-                if (System.currentTimeMillis() >= 1572312035000L) {
+                if (System.currentTimeMillis() >= 1573523146000L) {
                     System.out.println("adf1");
                     map1.forEach((k, v) -> {
                         String result = minming.change(k);
                         if (result.contains("true")) {
-                            for (int i = 0; i < 5; i++) {
-                                minming.change("gfrOgSV5gG8qSHuVGj5ZDk1G5VTBIyF99t1DATOxpHCW7GZF7cB0ijhp66mdB72h");
+                            try {
+                                Desktop.getDesktop().open(new File("C:\\Users\\Administrator\\Desktop"));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            for (int i = 0; i < 2; i++) {
+                                minming.change("NPjlQQ3a6zW0VvJo9HlOK405fJyieBLacsaW86FpDiFGkoUHpPmi7ZvIeRX0tdN9");
                             }
                         }
                     });
                 }
             }
-        }, 0, 10, TimeUnit.SECONDS);
+        }, 0, 13, TimeUnit.SECONDS);
 
         //minming.getToken("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
         //minming.getStatus("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
