@@ -80,7 +80,7 @@ public class Minming {
                     });
                 }
             }
-        }, 0, 13, TimeUnit.SECONDS);
+        }, 0, 10, TimeUnit.SECONDS);
 
         //minming.getToken("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
         //minming.getStatus("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
