@@ -63,7 +63,7 @@ public class Minming {
                 map1.put("PW1TBvZHcNWojeWoOhqufYfb87VtMtELMLHqDatEV0HUs6AS6yyzdCw4n3l2ntVf", "2");
                 //map1.put("ua9XzVaeABQBC1Ss3uFOAtIxvi54fmFvtbC1K18AGwRKtLfBKQ9ZZnvGNFqo35Db", "3");
                 //map1.put("gfrOgSV5gG8qSHuVGj5ZDk1G5VTBIyF99t1DATOxpHCW7GZF7cB0ijhp66mdB72h","1");
-                if (System.currentTimeMillis() >= 1573523146000L) {
+                if (System.currentTimeMillis() >= 1574127601000L) {
                     System.out.println("adf1");
                     map1.forEach((k, v) -> {
                         String result = minming.change(k);
