@@ -1,5 +1,7 @@
 package test;
 
+import org.apache.commons.lang3.time.DateUtils;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +32,11 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        Date date = DateUtils.addDays(new Date(), -10);
+        System.out.println(new Date());
+
+        System.out.println(date);
     }
 
 

@@ -1,5 +1,3 @@
-import jdk.nashorn.internal.objects.annotations.Getter;
-
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -15,11 +13,21 @@ public class CountDownLatchDemo {
                 System.out.println(Thread.currentThread().getName() + "上完自习，离开教室");
                 //执行一次减一次
                 countDownLatch.countDown();
+                try {
+                    System.out.println(Thread.currentThread().getName()+"阻塞");
+
+                    countDownLatch.await();
+                    System.out.println(Thread.currentThread().getName()+"启动");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }, String.valueOf(i)).start();
         }
         try {
             //countDownLatch减到0才继续往下执行
+            System.out.println("asd");
             countDownLatch.await();
+            System.out.println("cvb");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

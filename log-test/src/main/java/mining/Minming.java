@@ -21,9 +21,9 @@ public class Minming {
     public static void main(String[] args) {
         Minming minming = new Minming();
         List<String> tokens = new ArrayList<>();
-        tokens.add("NPjlQQ3a6zW0VvJo9HlOK405fJyieBLacsaW86FpDiFGkoUHpPmi7ZvIeRX0tdN9");//main
-        tokens.add("PW1TBvZHcNWojeWoOhqufYfb87VtMtELMLHqDatEV0HUs6AS6yyzdCw4n3l2ntVf");
-        tokens.add("ua9XzVaeABQBC1Ss3uFOAtIxvi54fmFvtbC1K18AGwRKtLfBKQ9ZZnvGNFqo35Db");//mfn
+        tokens.add("GrE8LHCDOlIkNEJuhb6Fsm52KlcPO33e4NRYsHLaYuzdF5tuxX6CMYlduVN7UrmC");//main
+        //tokens.add("PW1TBvZHcNWojeWoOhqufYfb87VtMtELMLHqDatEV0HUs6AS6yyzdCw4n3l2ntVf");
+        //tokens.add("ua9XzVaeABQBC1Ss3uFOAtIxvi54fmFvtbC1K18AGwRKtLfBKQ9ZZnvGNFqo35Db");//mfn
 
         ScheduledExecutorService scheduled = Executors.newScheduledThreadPool(3);
         scheduled.scheduleAtFixedRate(() -> {
@@ -56,7 +56,7 @@ public class Minming {
         }, 0, 10, TimeUnit.SECONDS);
 
         //周二开启
-        scheduled.scheduleAtFixedRate(new Runnable() {
+        /*scheduled.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
                 Map<String, String> map1 = new HashMap<>();
@@ -80,7 +80,7 @@ public class Minming {
                     });
                 }
             }
-        }, 0, 10, TimeUnit.SECONDS);
+        }, 0, 10, TimeUnit.SECONDS);*/
 
         //minming.getToken("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
         //minming.getStatus("0hoZecVrp7qgFaRokTE1CxcBNqU31ht0Ynbxj1pvGntnMDrLfrNulP8nx9q3nXR9");
